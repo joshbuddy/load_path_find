@@ -1,6 +1,6 @@
 = Load Path Find
 
-Useful tools for looking for files on the $LOAD_PATH
+Useful tools for looking for files on the <tt>$LOAD_PATH</tt>
 
 == Usage
 
@@ -15,3 +15,13 @@ Useful tools for looking for files on the $LOAD_PATH
 And you'll get an array of matches.
 
   > $LOAD_PATH.find_all_files('../spec') {|file| puts "here is a spec! #{file}"}
+
+And now, even more awesome!
+
+  > $LOAD_PATH.add_current
+  
+.. adds the current path to your <tt>$LOAD_PATH</tt> and.
+
+  > $LOAD_PATH.add_current!
+
+.. adds the current path to the start of the <tt>$LOAD_PATH</tt>

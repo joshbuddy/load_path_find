@@ -1,3 +1,5 @@
+require 'dirge'
+
 $LOAD_PATH.instance_eval do
   def find_file(file)
     find_all_files(file){|f| return f}
@@ -13,6 +15,14 @@ $LOAD_PATH.instance_eval do
       end
       ary
     }
+  end
+
+  def add_current
+    self << __DIR_REL__(caller.first)
+  end
+
+  def add_current!
+    self.unshift(__DIR_REL__(caller.first))
   end
 
 end

@@ -9,6 +9,7 @@ begin
     s.homepage = "http://github.com/joshbuddy/load_path_find"
     s.authors = "Joshua Hull"
     s.files = FileList["[A-Z]*", "{lib,spec,rails}/**/*"]
+    s.add_dependency 'dirge', '>=0.0.3'
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
