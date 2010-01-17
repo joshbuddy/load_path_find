@@ -1,0 +1,17 @@
+= Load Path Find
+
+Useful tools for looking for files on the $LOAD_PATH
+
+== Usage
+
+  > require 'load_path_find'
+  > $LOAD_PATH.find_file('set.rb')
+  < "/opt/local/lib/ruby/1.8/set.rb"
+  
+.. Load a bunch of gems with spec directories ..  
+  
+  > $LOAD_PATH.find_all_files('../spec')
+
+And you'll get an array of matches.
+
+  > $LOAD_PATH.find_all_files('../spec') {|file| puts "here is a spec! #{file}"}
