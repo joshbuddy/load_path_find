@@ -25,3 +25,5 @@ And now, even more awesome!
   > $LOAD_PATH.add_current!
 
 .. adds the current path to the start of the <tt>$LOAD_PATH</tt>
+
+And one more clever trick, <tt>Kernel#require_all</tt>, lets you require all matching files.

@@ -29,6 +29,6 @@ end
 
 module Kernel
   def require_all(req)
-    $LOAD_PATH.find_all_files("#{req}.rb") { |file| require file }
+    $LOAD_PATH.find_all_files(File.extname(req) == '.rb' ? req : "#{req}.rb") { |file| require file }
   end
 end
