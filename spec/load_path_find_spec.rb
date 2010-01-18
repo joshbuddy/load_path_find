@@ -46,4 +46,12 @@ describe 'load path find' do
     $LOAD_PATH.first.should == __DIR__
   end
 
+  it "should require_all" do
+    $state1.should be_nil
+    $state2.should be_nil
+    require_all('test')
+    $state1.should be_true
+    $state2.should be_true
+  end
+
 end

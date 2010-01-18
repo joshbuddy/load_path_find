@@ -26,3 +26,9 @@ $LOAD_PATH.instance_eval do
   end
 
 end
+
+module Kernel
+  def require_all(req)
+    $LOAD_PATH.find_all_files("#{req}.rb") { |file| require file }
+  end
+end
