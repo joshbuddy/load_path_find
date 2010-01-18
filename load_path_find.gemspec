@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{load_path_find}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Joshua Hull"]
-  s.date = %q{2010-01-16}
+  s.date = %q{2010-01-17}
   s.description = %q{Convenient way to find stuff on the load path.}
   s.email = %q{joshbuddy@gmail.com}
   s.extra_rdoc_files = [
@@ -21,7 +21,9 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/load_path_find.rb",
     "spec/data/dir1/file1",
+    "spec/data/dir1/test.rb",
     "spec/data/dir2/file1",
+    "spec/data/dir2/test.rb",
     "spec/load_path_find_spec.rb",
     "spec/spec.opts"
   ]
@@ -31,6 +33,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{Convenient way to find stuff on the load path.}
   s.test_files = [
+    "spec/data/dir1/test.rb",
+    "spec/data/dir2/test.rb",
     "spec/load_path_find_spec.rb"
   ]
 
