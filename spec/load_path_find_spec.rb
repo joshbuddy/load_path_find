@@ -53,5 +53,10 @@ describe 'load path find' do
     $state1.should be_true
     $state2.should be_true
   end
+  
+  it "should require_next" do
+    require 'test2'
+    $test2.should == 2
+  end
 
 end

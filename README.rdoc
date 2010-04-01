@@ -27,3 +27,15 @@ And now, even more awesome!
 .. adds the current path to the start of the <tt>$LOAD_PATH</tt>
 
 And one more clever trick, <tt>Kernel#require_all</tt>, lets you require all matching files.
+
+Also, there is <tt>Kernel#require_next</tt> which can be used to monkey patch on require:
+
+  # my_extension/stringio.rb
+  require_next "stringio"
+  StringIO.class_eval do
+    # insert evil stuff here
+  end
+  
+  # my_extension/setup.rb
+  $LOAD_PATH.add_current!
+  require "some_code_not_owned_by_me_maybe_requiring_stringio_oh_how_will_i_fool_them_all"
