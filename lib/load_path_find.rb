@@ -8,7 +8,7 @@ $LOAD_PATH.instance_eval do
 
   def find_all_files(file)
     inject([]){|ary, path| 
-      target = File.join(path, file)
+      target = File.expand_path(file, path)
       if File.readable?(target)
         ary << target
         yield target if block_given?

@@ -10,8 +10,8 @@ describe 'load path find' do
   end
 
   it "should find a directory on the load path" do
-    target = File.join('..', 'dir1')
-    $:.find_file(target)[-target.size, target.size].should == target
+    target = "data/dir1"
+    $:.find_file("../dir1")[-target.size, target.size].should == target
   end
 
   it "should find the first file when its ambigious" do
