@@ -6,7 +6,8 @@ $LOAD_PATH.instance_eval do
     nil
   end
 
-  def find_all_files(file)
+  def find_all_files(file, ext = nil)
+    file += ext if ext and File.extname(file) != ext
     inject([]){|ary, path| 
       target = File.expand_path(file, path)
       if File.readable?(target)
@@ -29,6 +30,6 @@ end
 
 module Kernel
   def require_all(req)
-    $LOAD_PATH.find_all_files(File.extname(req) == '.rb' ? req : "#{req}.rb") { |file| require file }
+    $LOAD_PATH.find_all_files(req, ".rb") { |file| require file }
   end
 end
