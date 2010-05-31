@@ -2,6 +2,19 @@
 
 Useful tools for looking for files on the <tt>$LOAD_PATH</tt>
 
+==DEPRECATED
+
+This library is no longer maintained. Everything it does and so much more is now provided by
+http://github.com/joshbuddy/callsite. To get back load_path_find's specific functionality, you can do the following
+
+  gem install 'callsite'
+  
+And in ruby
+
+  require 'load_path_find'
+
+Now everything below will work as-is!
+
 == Usage
 
   > require 'load_path_find'
